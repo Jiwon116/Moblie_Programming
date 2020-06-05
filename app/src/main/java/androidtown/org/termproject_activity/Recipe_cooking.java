@@ -1,5 +1,6 @@
 package androidtown.org.termproject_activity;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -36,7 +37,7 @@ public class Recipe_cooking extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), Recipe_start.class);
                 startActivity(intent);
             }
         });
@@ -73,7 +74,7 @@ public class Recipe_cooking extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(getApplicationContext(), RefrigeratorActivity.class);
+                Intent intent = new Intent(getApplicationContext(), Refrigerator.class);
                 startActivity(intent);
             }
         });

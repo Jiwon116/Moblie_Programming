@@ -1,5 +1,7 @@
 package androidtown.org.termproject_activity;
 
+
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -76,7 +78,7 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(getApplicationContext(), RefrigeratorActivity.class);
+                Intent intent = new Intent(getApplicationContext(), Refrigerator.class);
                 startActivity(intent);
             }
         });
@@ -100,3 +102,4 @@ public class SettingActivity extends AppCompatActivity {
         });
     }
 }
+

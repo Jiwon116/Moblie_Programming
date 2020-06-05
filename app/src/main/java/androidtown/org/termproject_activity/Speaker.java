@@ -38,4 +38,3 @@ public class Speaker extends Fragment {
         return rootView;
     }
 }
-

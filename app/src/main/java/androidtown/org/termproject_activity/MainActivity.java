@@ -1,16 +1,28 @@
 package androidtown.org.termproject_activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
+import android.util.Log;
+import android.widget.EditText;
+import android.widget.ListAdapter;
+import android.widget.Toast;
+import android.widget.TextView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Locale;
+
+import static java.sql.DriverManager.println;
+
+
+public class MainActivity  extends AppCompatActivity{
 
     Button home;
     Button refrigerator;
@@ -34,42 +46,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void SetListener() {
-        home.setOnClickListener(new View.OnClickListener(){
+        home.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }
         });
 
-        refrigerator.setOnClickListener(new View.OnClickListener(){
+        refrigerator.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
-                Intent intent = new Intent(getApplicationContext(), RefrigeratorActivity.class);
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Refrigerator.class);
                 startActivity(intent);
             }
         });
 
-        recipe.setOnClickListener(new View.OnClickListener(){
+        recipe.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), RecipeActivity.class);
                 startActivity(intent);
             }
         });
 
-        setting.setOnClickListener(new View.OnClickListener(){
+        setting.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SettingActivity.class);
                 startActivity(intent);
             }
         });
     }
-
-
 }

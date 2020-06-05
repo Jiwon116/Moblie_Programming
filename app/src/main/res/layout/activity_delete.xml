@@ -1,52 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackGround">
+    android:background="@color/colorBackGround"
+    android:id="@+id/del">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp"
-        android:id="@+id/deleteLayout"
-        android:background="@color/colorBackGround">
-    <TextView
-        android:id="@+id/textView_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="삭제할 것을 선택하세요!"
-        android:textSize="30dp"
-        android:layout_marginBottom="20dp"
-        android:layout_centerHorizontal="true"/>
+        android:background="@color/colorBackGround"
+        android:layout_margin="20dp">
 
-    <ListView android:id="@+id/deleteListView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:choiceMode="multipleChoice"
-        android:layout_below="@+id/textView_delete"/>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/deleteButtonPanel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true">
-
-        <Button
-            android:id="@+id/deleteButton"
+        <ImageView
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="삭제"
-            android:textSize="20dp"/>
+            android:src="@drawable/title"
+            android:foregroundGravity="center"/>
 
-        <Button
-            android:id="@+id/cancleButton"
+        <TextView
+            android:id="@+id/reDelName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="취소"
-            android:textSize="20dp"/>
+            android:layout_gravity="center"
+            android:layout_alignLeft="@id/title"
+            android:layout_alignTop="@id/title"
+            android:layout_alignRight="@id/title"
+            android:layout_alignBottom="@id/title"
+            android:layout_marginTop="40dp"
+            android:textAlignment="center"
+            android:textSize="30sp" />
 
-    </LinearLayout>
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"
+            android:layout_marginTop="160dp"
+            android:layout_marginBottom="50dp"/>
+
+        <ListView
+            android:id="@+id/listview2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"
+            android:layout_marginTop="160dp"
+            android:layout_marginBottom="50dp"/>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/deleteButtonPanel"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true">
+
+            <Button
+                android:id="@+id/delB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="삭제완료"
+                android:layout_marginRight="10dp"/>
+
+            <Button
+                android:id="@+id/returnB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="돌아가기" />
+
+        </LinearLayout>
     </RelativeLayout>
-</RelativeLayout>
+</LinearLayout>

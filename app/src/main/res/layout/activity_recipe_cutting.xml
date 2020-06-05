@@ -91,7 +91,7 @@
                 android:id="@+id/home_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#F29661"
+                android:background="@color/colorBar"
                 android:text="홈"
                 android:textStyle="bold" />
 
@@ -107,7 +107,7 @@
                 android:id="@+id/refrigerator_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#F29661"
+                android:background="@color/colorBar"
                 android:text="냉장고"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -121,7 +121,7 @@
                 android:id="@+id/recipe_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#F29661"
+                android:background="@color/colorBar"
                 android:text="레시피"
                 android:textStyle="bold" />
 
@@ -136,7 +136,7 @@
                 android:id="@+id/setting_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#F29661"
+                android:background="@color/colorBar"
                 android:text="설정"
                 android:textStyle="bold" />
         </LinearLayout>

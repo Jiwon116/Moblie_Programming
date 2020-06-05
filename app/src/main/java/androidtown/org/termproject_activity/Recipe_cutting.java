@@ -1,5 +1,6 @@
 package androidtown.org.termproject_activity;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -72,7 +73,7 @@ public class Recipe_cutting extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(getApplicationContext(), RefrigeratorActivity.class);
+                Intent intent = new Intent(getApplicationContext(), Refrigerator.class);
                 startActivity(intent);
             }
         });

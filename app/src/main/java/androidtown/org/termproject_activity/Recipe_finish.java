@@ -12,6 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import androidtown.org.termproject_activity.Speaker;
+
 public class Recipe_finish extends AppCompatActivity {
     Button home;
     Button refrigerator;
@@ -69,7 +71,7 @@ public class Recipe_finish extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(getApplicationContext(), RefrigeratorActivity.class);
+                Intent intent = new Intent(getApplicationContext(), Refrigerator.class);
                 startActivity(intent);
             }
         });

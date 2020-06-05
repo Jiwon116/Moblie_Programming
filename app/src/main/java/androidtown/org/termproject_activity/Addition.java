@@ -2,85 +2,143 @@ package androidtown.org.termproject_activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.TextView;
+
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
+import android.util.Log;
+import android.widget.ListAdapter;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class Addition extends AppCompatActivity {
-    EditText foodName, foodLimit,foodEntity;
-    RadioGroup radioGroup;
-    RadioButton refrigerator, freezer;
+    String ingName;
+    String ingAm;
+    String ingU;
+
+    private final String dbName = "cook";
+    private final String high = "highRef";
+    private final String low = "lowRef";
+
+    static SQLiteDatabase sampleDB = null;
+    ListAdapter adapter;
+    EditText tx1;
+    EditText tx2;
+    EditText tx3;
+    int click =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addition);
 
-        foodName = findViewById(R.id.editName);
-        foodLimit = findViewById(R.id.editLimit);
-        foodEntity = findViewById(R.id.editEntity);
-        radioGroup = findViewById(R.id.radioGroup);
-        refrigerator = findViewById(R.id.refrigerator);
-        freezer = findViewById(R.id.freezer);
+        //어느 냉장고가 열렸는지 받아오기!
+        Intent intent = getIntent();
+        Bundle bundle = new Bundle();
+        bundle = intent.getExtras();
 
-        Button buttonFinish = findViewById(R.id.finish);
-        buttonFinish.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        int openH = bundle.getInt("H_open");
+        int openL = bundle.getInt("L_open");
 
-                int radioId = radioGroup.getCheckedRadioButtonId();
-                //냉장 선택시
-                if(refrigerator.getId()==radioId) {
-                    //정보 보내기
-                    /*
-                    FragmentHigh fragmentHigh = (FragmentHigh) getSupportFragmentManager().findFragmentById(R.id.highFragment);
-                    Bundle mybundle1 = new Bundle();
+        //냉장고에 넣는버튼
+        Button initB = findViewById(R.id.initB);
+        TextView name1 = (TextView) findViewById(R.id.reName);
 
-                    mybundle1.putString("name", foodName.getText().toString());
-                    mybundle1.putString("limit", foodLimit.getText().toString());
-                    mybundle1.putString("entity", foodEntity.getText().toString());
+        ///////////////////////냉동고에 넣기 ///////////////////////////////////////
+        if(openH==1) {
+            name1.setText("냉동고에 넣기 ");
 
-                    fragmentHigh.setArguments(mybundle1);
-                    //getSupportFragmentManager().beginTransaction().add(R.id.highContainer, fragmentHigh).commit();
-*/
-                    //Toast 확인
-                    Toast.makeText(getApplicationContext(), "냉장 저장 완료", Toast.LENGTH_SHORT).show();
-                    finish();
+            tx1 = (EditText) findViewById(R.id.ingName);
+            tx2 = (EditText) findViewById(R.id.ingAm);
+            tx3 = (EditText) findViewById(R.id.ingU);
+
+            initB.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    ingName = tx1.getText().toString();
+                    ingAm = tx2.getText().toString();
+                    ingU = tx3.getText().toString();
+                    click = 1;
+
+                    Toast.makeText(getApplicationContext(), "입력 되었습니다!", Toast.LENGTH_LONG).show();
+
+                    inHDB();
                 }
-                //냉동 선택시
-                else if(freezer.getId()==radioId) {
-                    //정보 보내기
-                    /*
-                    Bundle mybundle2 = new Bundle();
+            });
+        }
+        ////////////////////////////냉장고에 넣기 //////////////////////////////////////////////
+        if(openL==1) {
+            name1.setText("냉장고에 넣기 ");
 
-                    mybundle2.putString("name", foodName.getText().toString());
-                    mybundle2.putString("limit", foodLimit.getText().toString());
-                    mybundle2.putString("entity", foodEntity.getText().toString());
+            tx1 = (EditText) findViewById(R.id.ingName);
+            tx2 = (EditText) findViewById(R.id.ingAm);
+            tx3 = (EditText) findViewById(R.id.ingU);
 
-                    fragmentLow.setArguments(mybundle2);
-                    getSupportFragmentManager().beginTransaction().add(R.id.lowFragment, fragmentLow).commit();
-*/
-                    //Toast 확인
-                    Toast.makeText(getApplicationContext(),"냉동 저장 완료", Toast.LENGTH_SHORT).show();
-                    finish();
+            initB.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ingName = tx1.getText().toString();
+                    ingAm = tx2.getText().toString();
+                    ingU = tx3.getText().toString();
+                    click = 1;
+
+                    Toast.makeText(getApplicationContext(), "입력 되었습니다!", Toast.LENGTH_LONG).show();
+
+                    inLDB();
                 }
-            }
-        });
+            });
+        }
 
-        Button buttonCancle = findViewById(R.id.cancle);
-        buttonCancle.setOnClickListener(new View.OnClickListener() {
+        //냉장고로 돌아가는 버튼 !!
+        Button returnB = findViewById(R.id.returnB);
+        returnB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
+    }
 
+    private void inHDB(){
+        if (click == 1) {
+            try {
+
+                sampleDB = this.openOrCreateDatabase(dbName, MODE_PRIVATE, null);
+
+                sampleDB.execSQL("INSERT INTO highRef values("+"'"+ingName+"', '"+ingAm+"', '"+ingU+"')");
+
+                sampleDB.close();
+            } catch (SQLiteException se) {
+                Toast.makeText(getApplicationContext(), se.getMessage(), Toast.LENGTH_LONG).show();
+                Log.e("", se.getMessage());
+            }
+            Toast.makeText(getApplicationContext(), "냉동고에 입력완료", Toast.LENGTH_LONG).show();
+        }
+        click =0;
+    }
+
+    private void inLDB(){
+        if (click == 1) {
+            try {
+                sampleDB = this.openOrCreateDatabase(dbName, MODE_PRIVATE, null);
+
+                sampleDB.execSQL("INSERT INTO lowRef values("+"'"+ingName+"', '"+ingAm+"', '"+ingU+"')");
+
+                sampleDB.close();
+            } catch (SQLiteException se) {
+                Toast.makeText(getApplicationContext(), se.getMessage(), Toast.LENGTH_LONG).show();
+                Log.e("", se.getMessage());
+            }
+            Toast.makeText(getApplicationContext(), "냉장고에 입력완료", Toast.LENGTH_LONG).show();
+        }
+        click =0;
     }
 }
-

@@ -1,15 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackGround">
+    android:background="@color/colorBackGround"
+    android:id="@+id/add">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorBackGround"
-        android:layout_margin="20dp"
-        android:id="@+id/plusLayout">
+        android:layout_margin="20dp">
+
+        <ImageView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/title"
+            android:foregroundGravity="center"/>
+
+        <TextView
+            android:id="@+id/reName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_alignLeft="@id/title"
+            android:layout_alignTop="@id/title"
+            android:layout_alignRight="@id/title"
+            android:layout_alignBottom="@id/title"
+            android:layout_marginTop="40dp"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
     <TextView
         android:id="@+id/foodName"
         android:layout_height="wrap_content"
@@ -17,9 +38,10 @@
         android:text="음식 이름: "
         android:textSize="20dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="160dp"/>
     <EditText
-        android:id="@+id/editName"
+        android:id="@+id/ingName"
+        android:hint="새우"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/foodName"
@@ -31,9 +53,9 @@
         android:layout_width="wrap_content"
         android:text="유통기한: "
         android:textSize="20dp"
-        android:layout_below="@+id/editName"/>
+        android:layout_below="@+id/ingName"/>
     <EditText
-        android:id="@+id/editLimit"
+        android:id="@+id/ingU"
         android:hint="2020-05-05"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,15 +68,15 @@
         android:layout_width="wrap_content"
         android:text="음식 양: "
         android:textSize="20dp"
-        android:layout_below="@+id/editLimit"/>
+        android:layout_below="@+id/ingU"/>
     <EditText
-        android:id="@+id/editEntity"
+        android:id="@+id/ingAm"
         android:hint="2개"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/entity"
         android:layout_marginBottom="20dp"/>
-
+        <!--
     <TextView
         android:id="@+id/position"
         android:layout_height="wrap_content"
@@ -84,7 +106,7 @@
             android:text="냉동"
             android:textSize="20dp"/>
     </RadioGroup>
-
+-->
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_height="wrap_content"
@@ -95,19 +117,20 @@
         android:layout_alignParentRight="true">
 
         <Button
-            android:id="@+id/finish"
+            android:id="@+id/initB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="완료"
-            android:textSize="20dp"/>
+            android:text="저장완료"
+            android:textSize="20dp"
+            android:layout_marginRight="10dp"/>
 
         <Button
-            android:id="@+id/cancle"
+            android:id="@+id/returnB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="취소"
+            android:text="돌아가기"
             android:textSize="20dp"/>
 
     </LinearLayout>
     </RelativeLayout>
-</RelativeLayout>
+</LinearLayout>

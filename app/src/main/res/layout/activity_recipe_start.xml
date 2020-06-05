@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorBackGround"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent" >
+
+    <RelativeLayout
+        android:background="@color/colorBackGround"
+        android:layout_height="550dp"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/recipeStartContainer" >
+
+        <EditText
+            android:id="@+id/nnn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:background="#FFC19E" />
+
+        <ImageView
+            android:id="@+id/memo1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="200dp"
+            android:src="@drawable/memo2" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:id="@+id/rrr"
+            android:textSize="20sp"
+            android:padding="30dp" />
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="330dp"
+            android:layout_marginLeft="110dp"
+            android:padding="40dp"
+            android:text="♡ 다음 단계로 ♡" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="480dp">
+
+            <Button
+                android:id="@+id/btn_play"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="PLAY" />
+
+            <Button
+                android:id="@+id/btn_pause"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="WAIT" />
+
+            <Button
+                android:id="@+id/btn_stop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="STOP" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_height="55dp"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom">
+
+        <LinearLayout
+            android:layout_height="55dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:background="#F29661"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:id="@+id/home_button"
+                android:text="홈"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="55dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:background="#F29661"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:id="@+id/refrigerator_button"
+                android:text="냉장고"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="55dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:background="#F29661"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:id="@+id/recipe_button"
+                android:text="레시피"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="55dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:background="#F29661"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:id="@+id/setting_button"
+                android:text="설정"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

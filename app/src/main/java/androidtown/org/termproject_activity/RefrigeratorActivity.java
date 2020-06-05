@@ -1,3 +1,4 @@
+/*
 package androidtown.org.termproject_activity;
 
 import android.content.Intent;
@@ -106,3 +107,4 @@ public class RefrigeratorActivity extends AppCompatActivity {
         });
     }
 }
+*/

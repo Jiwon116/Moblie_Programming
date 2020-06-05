@@ -1,154 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/colorBackGround">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="550dp" />
-<!--
-    <ScrollView
-        android:id="@+id/ScrollView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity ="center"
-        android:fillViewport="true"
-        android:layout_marginTop="0dp">
+        android:layout_height="550dp"
+        android:id="@+id/homeScreen">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/homeText"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:text="- WELCOME -"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="30dp"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
+        <ImageView
+            android:id="@+id/startImage"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/start"
+            android:layout_below="@+id/homeText"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="50dp"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+        <TextView
+            android:id="@+id/homeText2"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="▼ Click the Tab ▼"
+            android:layout_below="@+id/startImage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"/>
 
-                    <Imageview
-                        android:id="@+id/foodimage1"
-                        android:layout_width="210dp"
-                        android:layout_height="210dp"
-                        android:src="@drawable/kimchi"
-                        android:layout_centerInParent="true"
-                        android:layout_marginBottom="20dp"/>
+    </RelativeLayout>
 
-                    <TextView
-                        android:id="@+id/foodtext1"
-                        android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:gravity="center"
-                        android:textSize="20dp"
-                        android:text="김치찌개"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <Imageview
-                        android:id="@+id/foodimage2"
-                        android:layout_width="210dp"
-                        android:layout_height="210dp"
-                        android:src="@drawable/dakbokkeumtang"
-                        android:layout_centerInParent="true"
-                        android:layout_marginBottom="20dp"/>
-
-                    <TextView
-                        android:id="@+id/foodtext2"
-                        android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:gravity="center"
-                        android:textSize="20dp"
-                        android:text="닭볶음탕"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <Imageview
-                        android:id="@+id/foodimage3"
-                        android:layout_width="210dp"
-                        android:layout_height="210dp"
-                        android:src="@drawable/doenjangjjigae"
-                        android:layout_centerInParent="true"
-                        android:layout_marginBottom="20dp"/>
-
-                    <TextView
-                        android:id="@+id/foodtext3"
-                        android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:gravity="center"
-                        android:textSize="20dp"
-                        android:text="된장찌개"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <Imageview
-                        android:id="@+id/foodimage4"
-                        android:layout_width="210dp"
-                        android:layout_height="210dp"
-                        android:src="@drawable/jeyukbokkeum"
-                        android:layout_centerInParent="true"
-                        android:layout_marginBottom="20dp"/>
-
-                    <TextView
-                        android:id="@+id/foodtext4"
-                        android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:gravity="center"
-                        android:textSize="20dp"
-                        android:text="제육볶음"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
-    -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="55dp"
+        android:layout_below="@+id/homeScreen"
         android:layout_gravity="bottom" >
 
 
@@ -161,7 +60,7 @@
                 android:id="@+id/home_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#F29661"
+                android:background="@color/colorBar"
                 android:text="홈"
                 android:textStyle="bold" />
 
@@ -177,7 +76,7 @@
                 android:id="@+id/refrigerator_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#F29661"
+                android:background="@color/colorBar"
                 android:text="냉장고"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -191,7 +90,7 @@
                 android:id="@+id/recipe_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#F29661"
+                android:background="@color/colorBar"
                 android:text="레시피"
                 android:textStyle="bold" />
 
@@ -206,11 +105,9 @@
                 android:id="@+id/setting_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#F29661"
+                android:background="@color/colorBar"
                 android:text="설정"
                 android:textStyle="bold" />
         </LinearLayout>
-
     </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>
